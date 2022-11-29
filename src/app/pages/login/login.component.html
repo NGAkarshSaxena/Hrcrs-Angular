@@ -1,0 +1,43 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+   </head>
+
+    <div class="login-page d-flex align-items-center bg-gray-100">
+      <div class="container mb-4">
+        <div class="row">
+          <div class="col-md-5 mx-auto">
+            <div class="card">
+              <div class="card-body p-5">
+                <header class="text-center mb-5">
+                  <img class="bg-img" src="../../../assets/img/logo.svg" />
+                </header>
+                <form  
+                  ngNativeValidate (submit)="onSubmit()" class="login-form" method="get" action="index.html">
+                  <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                      <div class="form-floating mb-3 ">
+                        <input  [(ngModel)]="login.credential.username" name="username" type="text" class="form-control" id="floatingInput" placeholder="Username" autocomplete="off" required >
+                        <label  class="label-place" >Username</label >
+                        
+                      </div>
+                      <div class="form-floating">
+                        <input [(ngModel)]="login.credential.password" name = "password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label class="label-place" >Password</label>
+                      </div>
+                    </div>
+                    <div style="margin-top: 1rem"  class="col-12 text-center">       
+                      <button style="border-radius: 2px"  class="btn btn-primary mb-3" id="login" type="submit">Login</button><br></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+ 

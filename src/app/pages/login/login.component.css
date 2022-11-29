@@ -1,0 +1,77 @@
+.bg-img {
+    width: 50%;
+    height: auto;
+  }
+  .form-control{
+      border: none;
+      border-bottom: 1px solid #c5c5c5;
+      box-shadow:none;
+      
+  }
+  .label-place{
+    opacity: 0.5;
+  }
+  .login-page {
+    min-height: 100vh;
+    position: relative;
+  }
+  .login-page::before {
+    content: "";
+    display: block;
+    z-index: -1;
+    background: url(../../../assets/img/Login.png);
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .login-page .container {
+    z-index: 999;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
+  }
+  
+  /* sweet alert css toast */
+  .colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+  }
+  
+  .colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+  }
+  
+  .colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+  }
+  
+  .colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+  }
+  
+  .colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+  }
+  
+  .colored-toast .swal2-title {
+    color: white;
+  }
+  
+  .colored-toast .swal2-close {
+    color: white;
+  }
+  
+  .colored-toast .swal2-html-container {
+    color: white;
+  }
+  
+  

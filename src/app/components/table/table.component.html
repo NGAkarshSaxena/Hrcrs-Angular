@@ -1,0 +1,62 @@
+<table class="table table-stripped table-condensed ">
+  <thead>
+    <tr>
+      <th><div class="form-check ">
+        <input class="form-check-input" type="checkbox" (change)="bulk($event)" >
+        
+      </div></th>
+      <th>Sr No</th>
+      <th scope="col" *ngFor="let head of column">
+        {{ head.displayName }}
+      </th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data; let i = index">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [checked]="checks" >
+        <label class="form-check-label" for="flexCheckDefault">
+        </label>
+      </div>
+      <td>{{i+1}}</td>
+      
+      <!-- <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          Checked checkbox
+        </label>
+      </div> -->
+      <td  *ngFor="let head of column">
+          <div *ngIf="head.type == 'email'" [attr.title]="d[head.columnName]">
+              <app-button
+                [class]="'btn btn-link'"
+                [iconclass]="'bi bi-envelope'"
+                [text]="d[head.columnName].substr(0, 12)"
+              ></app-button>
+            </div>
+            <div *ngIf="head.type=='phone' ">
+              <app-button
+                [class]="'pe-none'"
+                [iconclass]="'bi bi-telephone'"
+                [text]="d[head.columnName].substr(0, 10)"
+              ></app-button>
+
+            </div>
+        <div *ngIf="head.type != 'email' && head.type !='phone'" >
+          {{ d[head.columnName] }}
+        </div>
+      </td>
+
+      <td>
+        <span *ngFor="let head of buttons" [title]="head.buttonname">
+          <app-button
+            [class]="head.buttondesc.class"
+            [iconclass]="head.buttondesc.iconClass"
+            [text]="head.buttondesc.text"
+          ></app-button>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
