@@ -11,6 +11,15 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   constructor(private http: HttpClient, public login: LoginService) {}
 
+  visible:boolean = true;
+  changetype:boolean =true;
+
+  viewpass(){
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
+
+
   title = 'hrcrs-frontend';
   onSubmit() {
     if (!this.login.Authenticate()) {
@@ -20,7 +29,7 @@ export class LoginComponent {
         text: 'Username or Password is incorrect ',
       });
     } else {
-      setTimeout(function () {
+        setTimeout(  function () {
         // localStorage.removeItem('token');
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
@@ -44,7 +53,7 @@ export class LoginComponent {
               // refresh staylogged in
             } else if (result.dismiss === Swal.DismissReason.cancel) {
               setTimeout(function () {
-                localStorage.removeItem('token');
+                localStorage.clear();
                 
               }, 60000);
               

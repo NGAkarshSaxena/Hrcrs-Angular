@@ -23,10 +23,14 @@
                         <label  class="label-place" >Username</label >
                         
                       </div>
-                      <div class="form-floating">
-                        <input [(ngModel)]="login.credential.password" name = "password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                      <div class="form-floating ">
+                        <input [(ngModel)]="login.credential.password" name = "password"  [type]="changetype?'password':'text'" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible?'bi bi-eye':'bi bi-eye-slash-fill'"></i>
+                        </span>
                         <label class="label-place" >Password</label>
+                        
                       </div>
+                      
                     </div>
                     <div style="margin-top: 1rem"  class="col-12 text-center">       
                       <button style="border-radius: 2px"  class="btn btn-primary mb-3" id="login" type="submit">Login</button><br></div>
