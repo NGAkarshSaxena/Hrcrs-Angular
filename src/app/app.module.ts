@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
+import { FilterPipe } from './Directives/filter.pipe';
+import { SortingPipe } from './Directives/sorting.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -20,18 +24,24 @@ import { AuthGuard } from './guards/auth.guard';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    PaginationComponent,
     DashboardComponent,
     TableComponent,
     ButtonComponent,
     LoginComponent,
+    FilterPipe,
+    SortingPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
+    
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

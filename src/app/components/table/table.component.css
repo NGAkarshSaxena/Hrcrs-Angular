@@ -45,7 +45,17 @@
 	  border-bottom: 0;
 	}
   }
-  
+  .bi-sort-alpha-down{
+	cursor: pointer;
+	padding: 6px;
+	font-size: large;
+  }
+.divclasss{
+	color: black;
+	display: flex;
+	justify-content: center;
+}
 
-
-  
+  .abcd{
+	cursor: pointer;
+  }

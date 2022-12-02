@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { SearchingService } from 'src/app/services/searching.service';
 import { column,button,buttondiv } from '../../configurablity/configure';
 
 @Component({
@@ -7,9 +8,15 @@ import { column,button,buttondiv } from '../../configurablity/configure';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent  {
-  constructor() {}
+  keyword:any;
+  
+  constructor(public _search:SearchingService) {
+    _search.searched$.subscribe((callback)=>{
+      this.keyword = callback;
+    })
+  }
 
-  title = 'hrcrs-frontend';
+title = 'hrcrs-frontend';
 
   view: button = {
     text: '  ',
@@ -106,6 +113,98 @@ export class DashboardComponent  {
       PhoneNumber:'9026483141'
 
     },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    {
+      ForeName: 'Aman',
+      SurName: 'Singh',
+      DOB: '18-11-2000',
+      Gender:"Male",
+      Email:'aman.singh@gmail.com',
+      PhoneNumber:'9026483141'
+
+    },
+    
+    
     {
       ForeName: 'Anshul',
       SurName: 'Kunwar',
