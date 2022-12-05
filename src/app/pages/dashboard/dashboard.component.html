@@ -5,16 +5,16 @@
 <main id="main" class="main">
   <div class="pagetitle">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-primary me-md-2 button1" type="button">
+      <button class="btn btn-primary me-md-2 button1" type="button" (click)="AddNew()">
         Add New
       </button>
-      <button class="btn btn-danger button2" type="button">Delete</button>
+      <button class="btn btn-danger button2" type="button" (click)="BulkDelete()" >Delete</button>
       <button class="btn btn-success button3" type="button">Pull Cibil</button>
     </div>
   </div>
 
   <div class="card-body">
-    <app-table [column]="columns" [data]="data" [buttons]="buttons" [searchfilter]="keyword"></app-table>
+    <app-table  [column]="columns" [data]="data" [buttons]="buttons" [searchfilter]="keyword"></app-table>
   </div>
   
 </main>

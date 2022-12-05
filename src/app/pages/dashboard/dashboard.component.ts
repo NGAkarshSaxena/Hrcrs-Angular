@@ -1,22 +1,42 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import { ApiOperationsService } from 'src/app/services/api-operations.service';
+import { BulkdeleteService } from 'src/app/services/bulkdelete.service';
 import { SearchingService } from 'src/app/services/searching.service';
-import { column,button,buttondiv } from '../../configurablity/configure';
+import { column, button, buttondiv } from '../../configurablity/configure';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent  {
-  keyword:any;
-  
-  constructor(public _search:SearchingService) {
-    _search.searched$.subscribe((callback)=>{
+export class DashboardComponent {
+  keyword: any;
+
+  constructor(
+    public _search: SearchingService,
+    public _delete: BulkdeleteService,
+    public _ops:ApiOperationsService
+  ) {
+    _search.searched$.subscribe((callback) => {
       this.keyword = callback;
-    })
+    });
+
+    // this.data = _ops.Read();
+  }
+  AddNew(){
+//navigate add new component
+  }
+  BulkDelete() {
+    this._delete.BulkDelete();
   }
 
-title = 'hrcrs-frontend';
+  title = 'hrcrs-frontend';
 
   view: button = {
     text: '  ',
@@ -34,11 +54,11 @@ title = 'hrcrs-frontend';
     iconClass: 'bi bi-trash text-danger',
     class: 'btn btn-md',
   };
-  pullcibil: button={
-    text:'',
-    iconClass:'bi bi-credit-card-fill text-primary',
-    class:'btn btn-link btn-md'
-  }
+  pullcibil: button = {
+    text: '',
+    iconClass: 'bi bi-credit-card-fill text-primary',
+    class: 'btn btn-link btn-md',
+  };
 
   buttons: buttondiv[] = [
     {
@@ -55,8 +75,8 @@ title = 'hrcrs-frontend';
     },
     {
       buttonname: 'Pull Cibil',
-      buttondesc : this.pullcibil
-    }
+      buttondesc: this.pullcibil,
+    },
   ];
 
   columns: column[] = [
@@ -65,7 +85,6 @@ title = 'hrcrs-frontend';
       search: true,
       columnName: 'ForeName',
       displayName: 'First Name',
-
     },
     {
       columnName: 'SurName',
@@ -100,119 +119,25 @@ title = 'hrcrs-frontend';
       ForeName: 'Akarsh',
       SurName: 'Saxena',
       DOB: '30-10-2000',
-      Gender:'Male',
-      Email:'akarsh.saxena@gmail.com',
-      PhoneNumber:'8318044117'
+      Gender: 'Male',
+      Email: 'akarsh.saxena@gmail.com',
+      PhoneNumber: '8318044117',
     },
     {
       ForeName: 'Aman',
       SurName: 'Singh',
       DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
+      Gender: 'Male',
+      Email: 'aman.singh@gmail.com',
+      PhoneNumber: '9026483141',
     },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    {
-      ForeName: 'Aman',
-      SurName: 'Singh',
-      DOB: '18-11-2000',
-      Gender:"Male",
-      Email:'aman.singh@gmail.com',
-      PhoneNumber:'9026483141'
-
-    },
-    
-    
     {
       ForeName: 'Anshul',
       SurName: 'Kunwar',
       DOB: '03-01-2000',
-      Gender:'Male',
-      Email:'anshul.kunwar@gmail.com',
-      PhoneNumber:'7275418687'
+      Gender: 'Male',
+      Email: 'anshul.kunwar@gmail.com',
+      PhoneNumber: '7275418687',
     },
-    
   ];
 }

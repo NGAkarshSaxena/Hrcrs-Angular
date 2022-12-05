@@ -1,8 +1,7 @@
 <table class="table table-stripped table-condensed">
   <thead>
     <div >
-      <select  class="abcd"  (change)="onTableSizeChange($event)" >
-        
+      <select   (change)="onTableSizeChange($event)" >
         <option *ngFor="let size of tableSizes">{{size}} </option>
       </select>
     </div>
@@ -17,7 +16,7 @@
           />
         </div>
       </th>
-      <th >Sr No</th>
+      <th  >Sr No</th>
       <th scope="col" *ngFor="let head of column">
         <div *ngIf="head.displayName == 'First Name'">
           <tr (click)="sort('ForeName')">
@@ -55,7 +54,7 @@
     >
     <td>
       <div class="form-check">
-        <input (ngModel)="d.selected" class="form-check-input" type="checkbox" [checked]="checks" (change)="checkbox(d)" />
+        <input (ngModel)="d.selected" class="form-check-input" type="checkbox" [checked]="checks" (click)="checkbox(d)" />
         <label class="form-check-label" for="flexCheckDefault"> </label>
       </div>
       </td>
